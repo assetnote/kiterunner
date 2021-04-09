@@ -1,0 +1,79 @@
+[
+  {
+    "ksuid": "0cc39f78f36dbe7fe7ea94c0f2687d269d728f96",
+    "url": "projectplay.xyz",
+    "securityDefinitions": {
+      "developerKey": {
+        "description": "If you want to build a tool just for yourself, be it a desktop widget to display your balances or a tool to import transactions from a bank without a bank feed, you can use our developer keys feature. You can issue yourself a key which will give you persistent API access to just your account. You should rotate your keys regularly.",
+        "in": "header",
+        "name": "X-Developer-Key",
+        "type": "apiKey"
+      }
+    },
+    "paths": {
+      "/onigokko/player": {
+        "post": {
+          "description": "Adds a new Player to the system",
+          "operationId": "CreatePlayer",
+          "parameters": [
+            {
+              "in": "header",
+              "name": "Token",
+              "description": "session token for validation purposes",
+              "required": true,
+              "type": "string",
+              "default": "example-token"
+            },
+            {
+              "in": "query",
+              "name": "QueryParam",
+              "description": "hahah123",
+              "required": true,
+              "type": "string",
+              "default": "example-query"
+            },
+            {
+              "in": "header",
+              "name": "Token",
+              "description": "session token for validation purposes",
+              "required": true,
+              "type": "string",
+              "default": "example-token"
+            },
+            {
+              "in": "body",
+              "name": "player",
+              "description": "Player to create",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "name"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "default": 5,
+                    "example": 123455
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Nathan Reline",
+                    "default": "Nathan Reline"
+                  }
+                }
+              }
+            }
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "text/plain"
+          ]
+        }
+      }
+    }
+  }
+]

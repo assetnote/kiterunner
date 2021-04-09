@@ -1,0 +1,1184 @@
+[  {
+    "url": "graph.windows.net",
+    "securityDefinitions": {},
+    "paths": {
+      "/{tenantID}/applications": {
+        "get": {
+          "description": "",
+          "operationId": "Applications_List",
+          "parameters": [
+            {
+              "description": "The filters to apply to the operation.",
+              "in": "query",
+              "name": "$filter",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "post": {
+          "description": "",
+          "operationId": "Applications_Create",
+          "parameters": [
+            {
+              "description": "The parameters for creating an application.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/applications/{applicationObjectId}": {
+        "delete": {
+          "description": "",
+          "operationId": "Applications_Delete",
+          "parameters": [
+            {
+              "description": "Application object ID.",
+              "in": "path",
+              "name": "applicationObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "get": {
+          "description": "",
+          "operationId": "Applications_Get",
+          "parameters": [
+            {
+              "description": "Application object ID.",
+              "in": "path",
+              "name": "applicationObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "patch": {
+          "description": "",
+          "operationId": "Applications_Patch",
+          "parameters": [
+            {
+              "description": "Application object ID.",
+              "in": "path",
+              "name": "applicationObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Parameters to update an existing application.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/applications/{applicationObjectId}/keyCredentials": {
+        "get": {
+          "description": "",
+          "operationId": "Applications_ListKeyCredentials",
+          "parameters": [
+            {
+              "description": "Application object ID.",
+              "in": "path",
+              "name": "applicationObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "patch": {
+          "description": "",
+          "operationId": "Applications_UpdateKeyCredentials",
+          "parameters": [
+            {
+              "description": "Application object ID.",
+              "in": "path",
+              "name": "applicationObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Parameters to update the keyCredentials of an existing application.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/applications/{applicationObjectId}/passwordCredentials": {
+        "get": {
+          "description": "",
+          "operationId": "Applications_ListPasswordCredentials",
+          "parameters": [
+            {
+              "description": "Application object ID.",
+              "in": "path",
+              "name": "applicationObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "patch": {
+          "description": "",
+          "operationId": "Applications_UpdatePasswordCredentials",
+          "parameters": [
+            {
+              "description": "Application object ID.",
+              "in": "path",
+              "name": "applicationObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Parameters to update passwordCredentials of an existing application.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/domains": {
+        "get": {
+          "description": "",
+          "operationId": "Domains_List",
+          "parameters": [
+            {
+              "description": "The filter to apply to the operation.",
+              "in": "query",
+              "name": "$filter",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/domains/{domainName}": {
+        "get": {
+          "description": "",
+          "operationId": "Domains_Get",
+          "parameters": [
+            {
+              "description": "name of the domain.",
+              "in": "path",
+              "name": "domainName",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/getObjectsByObjectIds": {
+        "post": {
+          "description": "",
+          "operationId": "Objects_GetObjectsByObjectIds",
+          "parameters": [
+            {
+              "description": "Objects filtering parameters.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/groups": {
+        "get": {
+          "description": "",
+          "operationId": "Groups_List",
+          "parameters": [
+            {
+              "description": "The filter to apply to the operation.",
+              "in": "query",
+              "name": "$filter",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "post": {
+          "description": "",
+          "operationId": "Groups_Create",
+          "parameters": [
+            {
+              "description": "The parameters for the group to create.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/groups/{groupObjectId}": {
+        "delete": {
+          "description": "",
+          "operationId": "Groups_Delete",
+          "parameters": [
+            {
+              "description": "The object ID of the group to delete.",
+              "in": "path",
+              "name": "groupObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/groups/{groupObjectId}/$links/members": {
+        "post": {
+          "description": "",
+          "operationId": "Groups_AddMember",
+          "parameters": [
+            {
+              "description": "The object ID of the group to which to add the member.",
+              "in": "path",
+              "name": "groupObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "The URL of the member object, such as https://graph.windows.net/0b1f9851-1bf0-433f-aec3-cb9272f093dc/directoryObjects/f260bbc4-c254-447b-94cf-293b5ec434dd.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/groups/{groupObjectId}/$links/members/{memberObjectId}": {
+        "delete": {
+          "description": "",
+          "operationId": "Groups_RemoveMember",
+          "parameters": [
+            {
+              "description": "The object ID of the group from which to remove the member.",
+              "in": "path",
+              "name": "groupObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Member object id",
+              "in": "path",
+              "name": "memberObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/groups/{objectId}": {
+        "get": {
+          "description": "",
+          "operationId": "Groups_Get",
+          "parameters": [
+            {
+              "description": "The object ID of the user for which to get group information.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/groups/{objectId}/getMemberGroups": {
+        "post": {
+          "description": "",
+          "operationId": "Groups_GetMemberGroups",
+          "parameters": [
+            {
+              "description": "The object ID of the group for which to get group membership.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Group filtering parameters.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/groups/{objectId}/members": {
+        "get": {
+          "description": "",
+          "operationId": "Groups_GetGroupMembers",
+          "parameters": [
+            {
+              "description": "The object ID of the group whose members should be retrieved.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/isMemberOf": {
+        "post": {
+          "description": "",
+          "operationId": "Groups_IsMemberOf",
+          "parameters": [
+            {
+              "description": "The check group membership parameters.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/me": {
+        "get": {
+          "description": "",
+          "operationId": "Objects_GetCurrentUser",
+          "parameters": [
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/servicePrincipals": {
+        "get": {
+          "description": "",
+          "operationId": "ServicePrincipals_List",
+          "parameters": [
+            {
+              "description": "The filter to apply to the operation.",
+              "in": "query",
+              "name": "$filter",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "post": {
+          "description": "",
+          "operationId": "ServicePrincipals_Create",
+          "parameters": [
+            {
+              "description": "Parameters to create a service principal.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/servicePrincipals/{objectId}": {
+        "delete": {
+          "description": "",
+          "operationId": "ServicePrincipals_Delete",
+          "parameters": [
+            {
+              "description": "The object ID of the service principal to delete.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "get": {
+          "description": "",
+          "operationId": "ServicePrincipals_Get",
+          "parameters": [
+            {
+              "description": "The object ID of the service principal to get.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/servicePrincipals/{objectId}/keyCredentials": {
+        "get": {
+          "description": "",
+          "operationId": "ServicePrincipals_ListKeyCredentials",
+          "parameters": [
+            {
+              "description": "The object ID of the service principal for which to get keyCredentials.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "patch": {
+          "description": "",
+          "operationId": "ServicePrincipals_UpdateKeyCredentials",
+          "parameters": [
+            {
+              "description": "The object ID for which to get service principal information.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Parameters to update the keyCredentials of an existing service principal.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/servicePrincipals/{objectId}/passwordCredentials": {
+        "get": {
+          "description": "",
+          "operationId": "ServicePrincipals_ListPasswordCredentials",
+          "parameters": [
+            {
+              "description": "The object ID of the service principal.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "patch": {
+          "description": "",
+          "operationId": "ServicePrincipals_UpdatePasswordCredentials",
+          "parameters": [
+            {
+              "description": "The object ID of the service principal.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Parameters to update the passwordCredentials of an existing service principal.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/users": {
+        "get": {
+          "description": "",
+          "operationId": "Users_List",
+          "parameters": [
+            {
+              "description": "The filter to apply to the operation.",
+              "in": "query",
+              "name": "$filter",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "post": {
+          "description": "",
+          "operationId": "Users_Create",
+          "parameters": [
+            {
+              "description": "Parameters to create a user.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/users/{objectId}/getMemberGroups": {
+        "post": {
+          "description": "",
+          "operationId": "Users_GetMemberGroups",
+          "parameters": [
+            {
+              "description": "The object ID of the user for which to get group membership.",
+              "in": "path",
+              "name": "objectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "User filtering parameters.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      },
+      "/{tenantID}/users/{upnOrObjectId}": {
+        "delete": {
+          "description": "",
+          "operationId": "Users_Delete",
+          "parameters": [
+            {
+              "description": "The object ID or principal name of the user to delete.",
+              "in": "path",
+              "name": "upnOrObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "get": {
+          "description": "",
+          "operationId": "Users_Get",
+          "parameters": [
+            {
+              "description": "The object ID or principal name of the user for which to get information.",
+              "in": "path",
+              "name": "upnOrObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        },
+        "patch": {
+          "description": "",
+          "operationId": "Users_Update",
+          "parameters": [
+            {
+              "description": "The object ID or principal name of the user to update.",
+              "in": "path",
+              "name": "upnOrObjectId",
+              "required": true,
+              "type": "string",
+              "x-ms-skip-url-encoding": true
+            },
+            {
+              "description": "Parameters to update an existing user.",
+              "in": "body",
+              "name": "parameters",
+              "required": true,
+              "schema": null
+            },
+            {
+              "description": "Client API version.",
+              "in": "query",
+              "name": "api-version",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The tenant ID.",
+              "in": "path",
+              "name": "tenantID",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "consumes": null,
+          "produces": null
+        }
+      }
+    }
+  }
+  ]

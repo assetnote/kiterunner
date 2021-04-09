@@ -1,0 +1,118 @@
+syntax = 'proto3';
+
+package proute;
+
+option go_package = "github.com/assetnote/kiterunner/pkg/proute";
+
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
+
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+
+// UUIDCrumb implements a crumb that renders a uuid when called
+message UUIDCrumb{
+  string Name = 1;
+}
+
+// StaticCrumb implements a crumb that renders a static value when called
+message StaticCrumb{
+  string K = 1;
+  string V = 2;
+}
+
+message IntCrumb{
+  int64 Min = 1;
+  int64 Max = 2;
+  int64 Val = 3;
+  bool Fixed = 4;
+  string Name = 5;
+}
+
+message BoolCrumb{
+  string Name = 1;
+  bool Fixed = 2;
+  bool Val = 3;
+}
+
+message FloatCrumb{
+  string Name = 1;
+  bool Fixed = 2;
+  double Val = 3;
+}
+
+// RandomStringCrumb will return a random string of specified length with the specified charset
+message RandomStringCrumb{
+  string Name = 1;
+  string Charset = 2;
+  int32 Length = 3[(gogoproto.casttype) = "int"];;
+}
+
+// RegexStringCrumb will generate a string based off a provided regex
+message RegexStringCrumb{
+  string Name = 1;
+  string Regex = 2;
+}
+
+message BasicAuthCrumb{
+  string Name = 1;
+  string User = 2;
+  string Password = 3;
+  bool Random = 4;
+}
+
+message ProtoArrayCrumb{
+  string Name = 1;
+  ProtoCrumb Element = 2;
+}
+
+message ProtoObjectCrumb{
+  string Name = 1;
+  repeated ProtoCrumb Elements = 2 [(gogoproto.nullable) = false];
+}
+
+// StringCrumbCrumb is a crumb that will generate the value of its child, then wrap it in a string
+message ProtoStringCrumbCrumb{
+  string Name = 1;
+  ProtoCrumb Child = 2;
+}
+
+message ProtoCrumb {
+  oneof crumb {
+    UUIDCrumb uuidCrumb = 1;
+    StaticCrumb staticCrumb = 2;
+    IntCrumb intCrumb = 3;
+    BoolCrumb boolCrumb = 4;
+    FloatCrumb floatCrumb = 5;
+    RandomStringCrumb randomStringCrumb = 6 ;
+    RegexStringCrumb regexStringCrumb = 7;
+    BasicAuthCrumb basicAuthCrumb = 8;
+    ProtoArrayCrumb arrayCrumb = 9;
+    ProtoObjectCrumb objectCrumb = 10;
+    ProtoStringCrumbCrumb stringCrumbCrumb = 11;
+  }
+}
+
+message ProtoRoute {
+  string TemplatePath = 1;
+  string Method = 2;
+  repeated ProtoCrumb PathCrumbs = 3 [(gogoproto.nullable) = false];
+  repeated ProtoCrumb HeaderCrumbs = 4 [(gogoproto.nullable) = false];
+  repeated ProtoCrumb QueryCrumbs = 5 [(gogoproto.nullable) = false];
+  repeated ProtoCrumb BodyCrumbs = 6 [(gogoproto.nullable) = false];
+  repeated string ContentType = 7 [(gogoproto.casttype) = "ContentType"];
+}
+
+message ProtoAPI {
+  string URL = 1;
+  string ID = 2;
+  repeated ProtoRoute Routes = 3 [(gogoproto.nullable) = false];
+  repeated ProtoCrumb HeaderCrumbs = 4 [(gogoproto.nullable) = false];
+  repeated ProtoCrumb QueryCrumbs = 5 [(gogoproto.nullable) = false];
+  repeated ProtoCrumb BodyCrumbs = 6 [(gogoproto.nullable) = false];
+  repeated ProtoCrumb CookieCrumbs = 7 [(gogoproto.nullable) = false];
+}
+
+
+message ProtoAPIS {
+  repeated ProtoAPI APIs = 1 [(gogoproto.nullable) = false];
+}
