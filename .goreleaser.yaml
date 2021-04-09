@@ -1,0 +1,18 @@
+project_name: kiterunner
+env:
+  - GO111MODULE=on
+builds:
+  - binary: kr
+    id: 'default'
+    main: ./cmd/kiterunner/main.go
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w -X github.com/assetnote/kiterunner/cmd/kiterunner/cmd.Version={{.Version}} -X github.com/assetnote/kiterunner/cmd/kiterunner/cmd.Commit={{.ShortCommit}} -X github.com/assetnote/kiterunner/cmd/kiterunner/cmd.Date={{.Date}}
+
+archives:
+  - id: default
+    builds:
+      - default
+    files:
+      - none*
