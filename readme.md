@@ -89,7 +89,7 @@ kr [scan|brute] <input> [flags]
 # Just have a list of hosts and no wordlist
 kr scan hosts.txt -A=apiroutes-210328:20000 -x 5 -j 100 --fail-status-codes 400,401,404,403,501,502,426,411
 
-# You have your own wordlist but you want assetnoet wordlists too
+# You have your own wordlist but you want assetnote wordlists too
 kr scan target.com -w routes.kite -A=apiroutes-210328:20000 -x 20 -j 1 --fail-status-codes 400,401,404,403,501,502,426,411
 
 # Bruteforce like normal but with the first 20000 words
