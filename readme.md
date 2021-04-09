@@ -398,6 +398,6 @@ When performing conversions to and from txt, json and kite files, all the conver
 
 ## Kite File Format
 
-We use a super secret kite file format for storing the json schemas from kitebuilder. These are simply https://golang.org/pkg/encoding/gob/ encoded `pkg/proute.APIS` written to a file. The compilation is used to allow us to quickly deserialize the already parsed wordlist. This file format is not stable, and should only be interacted with using the inbuilt conversion tools for kiterunner.
+We use a super secret kite file format for storing the json schemas from kitebuilder. These are simply protobuf encoded `pkg/proute.APIS` written to a file. The compilation is used to allow us to quickly deserialize the already parsed wordlist. This file format is not stable, and should only be interacted with using the inbuilt conversion tools for kiterunner.
 
 When a new version of the kite file format is released, you may need to recompile your kite files
