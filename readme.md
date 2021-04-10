@@ -2,6 +2,10 @@
 
 ![](/hack/kiterunner.png)
 
+[![GoDoc](https://godoc.org/github.com/assetnote/kiterunner?status.svg)](https://godoc.org/github.com/assetnote/kiterunner)
+[![GitHub release](https://img.shields.io/github/release/assetnote/kiterunner.svg)](https://github.com/assetnote/kiterunner/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/assetnote/kiterunner)](https://goreportcard.com/report/github.com/assetnote/kiterunner)
+
 # Introduction
 
 For the longest of times, content discovery has been focused on finding files and folders. While this approach is effective for legacy web servers that host static files or respond with 3xx’s upon a partial path, it is no longer effective for modern web applications, specifically APIs.
