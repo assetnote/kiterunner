@@ -286,6 +286,9 @@ func LoadTextWordlist(fns []string, extensions []string, dirsearchCompatabilityM
 			}
 
 			for _, v := range lines {
+				if len(v) == 0 {
+					continue
+				}
 				// ensure we prepend the / for a path
 				if v[0] != '/' {
 					v = append([]byte("/"), v...)
