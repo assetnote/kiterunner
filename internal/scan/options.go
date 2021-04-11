@@ -280,6 +280,14 @@ func LoadTextWordlist(fns []string, extensions []string, dirsearchCompatabilityM
 				return nil
 			}
 
+			if strings.HasSuffix(filename, ".kite") {
+				return fmt.Errorf("attempted to load kitefile as plain text wordlist: %s. Please provide a plain wordlist", filename)
+			}
+
+			if strings.HasSuffix(filename, ".json") {
+				return fmt.Errorf("attempted to load json as plain text wordlist: %s. Please provide a plain wordlist", filename)
+			}
+
 			lines, err := readLines(filename)
 			if err != nil {
 				return fmt.Errorf("failed to load file %s: %w", filename, err)
