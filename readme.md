@@ -316,7 +316,7 @@ We recommend **against** running kiterunner from your **macbook**. Due to poor k
 
 To maximise performance when scanning an individual target, or a large attack surface we recommend the following tips:
 - Spin up an EC2 instance in a similar geographic region/datacenter to the target(s) you are scanning
-- Perform some initial benchmarks aganist your target set with varying `-x` and `-j` options. We recommend having a typical starting point of around `-x 5 -j 100` and moving `-j` upwards as your CPU usage/network performance permits
+- Perform some initial benchmarks against your target set with varying `-x` and `-j` options. We recommend having a typical starting point of around `-x 5 -j 100` and moving `-j` upwards as your CPU usage/network performance permits
 
 ## Converting between file formats
 
@@ -357,7 +357,7 @@ Global Flags:
 
 ## Replaying requests
 
-When you receieve a bunch of output from kiterunner, it may be difficult to immediately understand why a request is causing a specific response code/length. Kiterunner offers a method of rebuilding the request from the wordlists used including all the header and body parameters.
+When you receive a bunch of output from kiterunner, it may be difficult to immediately understand why a request is causing a specific response code/length. Kiterunner offers a method of rebuilding the request from the wordlists used including all the header and body parameters.
 
 - You can replay a request by copy pasting the full response output into the `kb replay` command. 
 - You can specify a `--proxy` to forward your requests through, so you can modify/repeat/intercept the request using 3rd party tools if you wish
