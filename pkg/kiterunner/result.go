@@ -164,7 +164,16 @@ func (r *Result) AppendPrettyBytes(b []byte) []byte {
 
 	// Append the path
 	b = r.Target.AppendBytes(b)
-	b = r.Route.AppendPath(b)
+
+	// avoid double appending a path where its not necessary
+	// this destroys branch prediction. which is annoying, but not sure where else we can handle this
+	// its a pretty unlikely case since its only hit when printing results
+	if b[len(b)-1] == '/' && len(r.Route.Path) > 0 && r.Route.Path[0] == '/' {
+		b = append(b, r.Route.Path[1:]...)
+	} else {
+		b = r.Route.AppendPath(b)
+	}
+
 	b = append(b, " "...)
 
 	b = appendColorEnd(b)
@@ -198,7 +207,15 @@ func (r *Result) AppendBytes(b []byte) []byte {
 
 	// Append the path
 	b = r.Target.AppendBytes(b)
-	b = r.Route.AppendPath(b)
+
+	// avoid double appending a path where its not necessary
+	// this destroys branch prediction. which is annoying, but not sure where else we can handle this
+	// its a pretty unlikely case since its only hit when printing results
+	if b[len(b)-1] == '/' && len(r.Route.Path) > 0 && r.Route.Path[0] == '/' {
+		b = append(b, r.Route.Path[1:]...)
+	} else {
+		b = r.Route.AppendPath(b)
+	}
 	b = append(b, " "...)
 
 	b = r.Response.AppendRedirectChain(b)

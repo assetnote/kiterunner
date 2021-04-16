@@ -69,8 +69,11 @@ func TestParseDomain(t *testing.T) {
 	}{
 		{"simple", args{"foo.com"}, []*http.Target{{IsTLS: true, Hostname: "foo.com", Port: 443}, {Hostname: "foo.com", Port: 80}}, false},
 		{"full uri", args{"https://foo.com"}, []*http.Target{{IsTLS: true, Hostname: "foo.com", Port: 443}}, false},
+		{"full uri trailing slash", args{"https://foo.com/"}, []*http.Target{{IsTLS: true, Hostname: "foo.com", Port: 443, BasePath: "/"}}, false},
+		{"full uri trailing slash subdir", args{"https://foo.com/bar/"}, []*http.Target{{IsTLS: true, Hostname: "foo.com", Port: 443, BasePath: "/bar/"}}, false},
 		{"full uri with port", args{"https://foo.com:8443"}, []*http.Target{{IsTLS: true, Hostname: "foo.com", Port: 8443}}, false},
 		{"full http with port", args{"http://foo.com:8080"}, []*http.Target{{IsTLS: false, Hostname: "foo.com", Port: 8080}}, false},
+		{"full http with port trailing slash", args{"http://foo.com:8080/"}, []*http.Target{{IsTLS: false, Hostname: "foo.com", Port: 8080, BasePath: "/"}}, false},
 		{"full http with port and path", args{"http://foo.com:8080/path"}, []*http.Target{{IsTLS: false, Hostname: "foo.com", Port: 8080, BasePath: "/path"}}, false},
 		{"host with port tls", args{"foo.com:8443"}, []*http.Target{{IsTLS: true, Hostname: "foo.com", Port: 8443}}, false},
 		{"host with port notls", args{"foo.com:8080"}, []*http.Target{{IsTLS: false, Hostname: "foo.com", Port: 8080}}, false},
