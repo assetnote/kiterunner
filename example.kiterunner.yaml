@@ -1,0 +1,3 @@
+verbose: info
+output: pretty
+quiet: false
