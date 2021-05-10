@@ -29,6 +29,7 @@ Swagger files were collected from a number of datasources, including an internet
 * [Installation](#installation)
   * [Downloading a release](#downloading-a-release)
   * [Building from source](#building-from-source)
+  * [Installing via AUR](#aur)
 * [Usage](#usage)
   * [Quick Start](#quick-start)
   * [CLI Help](#cli-help)
@@ -79,6 +80,12 @@ Alternatively, it is possible to download the compile `.kite` files from the lin
 - [routes-large.kite](https://wordlists-cdn.assetnote.io/data/kiterunner/routes-large.kite.tar.gz) (40MB compressed, 183M decompressed)
 - [routes-small.kite](https://wordlists-cdn.assetnote.io/data/kiterunner/routes-small.kite.tar.gz) (2MB compressed, 35MB decompressed)
 
+## AUR
+Users using a Arch based distro can download the pre-built binary from [AUR](https://aur.archlinux.org/packages/kiterunner-bin/)
+You can use a "Aur Helper" like `yay` to install kiterunner
+```
+yay -S kiterunner-bin
+```
 # Usage
 
 ## Quick Start
