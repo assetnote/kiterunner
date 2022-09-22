@@ -119,7 +119,7 @@ Usage:
   kite scan [flags]
 
 Flags:
-  -A, --assetnote-wordlist strings    use the wordlists from wordlist.assetnote.io. specify the type/name to use, e.g. apiroutes-210228. You can specify an additional maxlength to use only the first N values in the wordlist, e.g. apiroutes-210228;20000 will only use the first 20000 lines in that wordlist
+  -A, --assetnote-wordlist strings    use the wordlists from wordlists.assetnote.io. specify the type/name to use, e.g. apiroutes-210228. You can specify an additional maxlength to use only the first N values in the wordlist, e.g. apiroutes-210228;20000 will only use the first 20000 lines in that wordlist
       --blacklist-domain strings      domains that are blacklisted for redirects. We will not follow redirects to these domains
       --delay duration                delay to place inbetween requests to a single host
       --disable-precheck              whether to skip host discovery
