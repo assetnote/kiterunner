@@ -146,7 +146,7 @@ Flags:
 Global Flags:
       --config string    config file (default is $HOME/.kiterunner.yaml)
   -o, --output string    output format. can be json,text,pretty (default "pretty")
-  -q, --quiet            quiet mode. will mute unecessarry pretty text
+  -q, --quiet            quiet mode. will mute unnecessary pretty text
   -v, --verbose string   level of logging verbosity. can be error,info,debug,trace (default "info")
 ```
 
@@ -251,7 +251,7 @@ A key feature of kiterunner is depth based scanning. This attempts to handle det
 - At depth 1, `/api` and `/secrets` would have baseline checks performed; and these checks would be used against `/api` and `/secrets` correspondingly
 - At depth 2, `/api/v1`, `/api/v2`, `/secrets/v1` and `/secrets/v2` would all have baseline checks performed.
 
-By default, `kr scan` has a depth of 1, since from internal usage, we've often seen this as the most common depth where virtual routing has occured. `kr brute` has a default depth of 0, as you typically don't want this check to be performed with a static wordlist.
+By default, `kr scan` has a depth of 1, since from internal usage, we've often seen this as the most common depth where virtual routing has occurred. `kr brute` has a default depth of 0, as you typically don't want this check to be performed with a static wordlist.
 
 Naturally, increasing the depth will increase the accuracy of your scans, however this also increases the number of requests to the target. (`# of baseline checks * # of depth baseline directories`). Hence, we recommend against going above 1, and in rare cases going to depth 2.
 
@@ -358,7 +358,7 @@ Flags:
 Global Flags:
 --config string    config file (default is $HOME/.kiterunner.yaml)
 -o, --output string    output format. can be json,text,pretty (default "pretty")
--q, --quiet            quiet mode. will mute unecessarry pretty text
+-q, --quiet            quiet mode. will mute unnecessary pretty text
 -v, --verbose string   level of logging verbosity. can be error,info,debug,trace (default "info")``bigquery
 ```
 

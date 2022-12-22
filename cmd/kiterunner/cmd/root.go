@@ -45,7 +45,7 @@ func init() {
 
 	rootCmd.PersistentFlags().StringVarP(&Verbose, "verbose", "v", "info", "level of logging verbosity. can be error,info,debug,trace")
 	rootCmd.PersistentFlags().StringVarP(&Output, "output", "o", "pretty", "output format. can be json,text,pretty")
-	rootCmd.PersistentFlags().BoolVarP(&Quiet, "quiet", "q", false, "quiet mode. will mute unecessarry pretty text")
+	rootCmd.PersistentFlags().BoolVarP(&Quiet, "quiet", "q", false, "quiet mode. will mute unnecessary pretty text")
 
 	viper.BindPFlag("verbose", rootCmd.PersistentFlags().Lookup("verbose"))
 	viper.BindPFlag("output", rootCmd.PersistentFlags().Lookup("output"))
