@@ -24,10 +24,7 @@ require (
 	github.com/spf13/viper v1.7.1
 	github.com/stretchr/testify v1.3.0
 	github.com/valyala/bytebufferpool v1.0.0
-	github.com/valyala/fasthttp v1.20.0
+	github.com/valyala/fasthttp v1.34.0
 	github.com/valyala/fasttemplate v1.2.1
 	github.com/vbauerster/mpb/v6 v6.0.2
-	golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83 // indirect
-	golang.org/x/sys v0.0.0-20210320140829-1e4c9ba3b0c4 // indirect
-	golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d // indirect
 )
