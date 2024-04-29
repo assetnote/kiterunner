@@ -75,7 +75,7 @@ The JSON datasets can be found below:
 - [routes-large.json](https://wordlists-cdn.assetnote.io/rawdata/kiterunner/routes-large.json.tar.gz) (118MB compressed, 2.6GB decompressed)
 - [routes-small.json](https://wordlists-cdn.assetnote.io/rawdata/kiterunner/routes-small.json.tar.gz) (14MB compressed, 228MB decompressed)
 
-Alternatively, it is possible to download the compile `.kite` files from the links below:
+Alternatively, it is possible to download the compiled `.kite` files from the links below:
 
 - [routes-large.kite](https://wordlists-cdn.assetnote.io/data/kiterunner/routes-large.kite.tar.gz) (40MB compressed, 183M decompressed)
 - [routes-small.kite](https://wordlists-cdn.assetnote.io/data/kiterunner/routes-small.kite.tar.gz) (2MB compressed, 35MB decompressed)
