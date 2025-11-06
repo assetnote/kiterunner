@@ -1,3 +1,13 @@
+# FIXES [README]
+What's different in this version?
+During my assessments, I've identified some concerning flaws with Kiterunner, which prevented me from bypassing some security solutions, like WAFs.
+
+The first problem was that I couldn't correctly define header values in the request. There were some WAF header values that, when introduced into Kiterunner's -H flag, it would interpret the comma (,) as multiple header values and not as a single header value. This would make it impossible to define headers with comma values. I've identified that this happens because Kiterunner utilizes StringSliceVarP instead of StringArrayVarP to get header values. StringSliceVarP would interpret the comma value as CSV, separating it into multiple headers.
+
+The second problem was with the delay function (--delay). I've identified that it doesn't matter which kind of value you input into Kiterunner; it will not have any effect. It's like it's not used at all. Well, that's actually what's happening here. Even though the delay value is retrieved from the input, it's not used when making the HTTP requests. If you look at pkg/kiterunner/kiterunner.go in the handleRequest function, specifically in routeloop, you will see that the Config.delay isn't used. To fix this, I've introduced a line of code that makes the program sleep for a while (depending on the --delay value).
+
+That's it. Now you can properly define a delay and security headers without any problems :)
+
 # Kiterunner
 
 ![](/hack/kiterunner.png)

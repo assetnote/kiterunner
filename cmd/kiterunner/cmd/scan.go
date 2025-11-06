@@ -129,7 +129,9 @@ func init() {
 
 	scanCmd.Flags().StringSliceVarP(&kitebuilderFiles, "kitebuilder-list", "w", kitebuilderFiles, "ogl wordlist to use for scanning")
 	scanCmd.Flags().BoolVar(&kitebuilderFullScan, "kitebuilder-full-scan", kitebuilderFullScan, "perform a full scan without first performing a phase scan.")
-	scanCmd.Flags().StringSliceVarP(&headers, "header", "H", []string{"x-forwarded-for: 127.0.0.1"}, "headers to add to requests")
+	//scanCmd.Flags().StringSliceVarP(&headers, "header", "H", []string{"x-forwarded-for: 127.0.0.1"}, "headers to add to requests")
+	// Fix for improper header definition
+	scanCmd.Flags().StringArrayVarP(&headers, "header", "H", []string{"x-forwarded-for: 127.0.0.1"}, "headers to add to requests")
 
 	scanCmd.Flags().BoolVar(&disablePrecheck, "disable-precheck", false, "whether to skip host discovery")
 

@@ -104,7 +104,9 @@ func init() {
 	bruteCmd.Flags().StringSliceVarP(&extensions, "extensions", "e", extensions, "extensions to append while scanning")
 	bruteCmd.Flags().BoolVarP(&dirsearchCompatabilityMode, "dirsearch-compat", "D", dirsearchCompatabilityMode, "this will replace %EXT% with the extensions provided. backwards compat with dirsearch because shubs loves him some dirsearch")
 
-	bruteCmd.Flags().StringSliceVarP(&headers, "header", "H", []string{"x-forwarded-for: 127.0.0.1"}, "headers to add to requests")
+	// bruteCmd.Flags().StringSliceVarP(&headers, "header", "H", []string{"x-forwarded-for: 127.0.0.1"}, "headers to add to requests")
+	// Fix for improper header definition
+	bruteCmd.Flags().StringArrayVarP(&headers, "header", "H", []string{"x-forwarded-for: 127.0.0.1"}, "headers to add to requests")
 
 	bruteCmd.Flags().BoolVar(&disablePrecheck, "disable-precheck", false, "whether to skip host discovery")
 

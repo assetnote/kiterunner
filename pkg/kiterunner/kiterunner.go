@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"sync"
+	"time"
 
 	"github.com/assetnote/kiterunner/pkg/http"
 	"github.com/assetnote/kiterunner/pkg/log"
@@ -256,6 +257,12 @@ func handleRequest(ctx context.Context, j *job, resChan chan *Result, config *Co
 
 routeloop:
 	for idx, route := range j.routes {
+		// Extra Line added to fix Delay function
+		if config.Delay > 0 {
+			time.Sleep(config.Delay)
+		}
+		// Extra Line added to fix Delay function
+		
 		// periodically check if the channel has terminated so we can exit
 		// TODO: not sure how this affects branch prediction on the loop, or whether there's a noticable performance impact
 		// i presume not, since 99% of the time we're waiting on network
