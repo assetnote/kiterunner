@@ -40,9 +40,9 @@ type ContentType string
 type Operation struct {
 	Description string        `json:"description,omitempty"`
 	OperationID string        `json:"operationId,omitempty"`
-	Parameters  []Parameter   `json:"parameter,omitempty"`
-	Consumes    []ContentType `json:"consume,omitempty"`
-	Produces    []ContentType `json:"produce,omitempty"`
+	Parameters  []Parameter   `json:"parameters,omitempty"`
+	Consumes    []ContentType `json:"consumes,omitempty"`
+	Produces    []ContentType `json:"produces,omitempty"`
 }
 
 // Typer provides an interface that makes parameter and schema generic. It provides a list of fields

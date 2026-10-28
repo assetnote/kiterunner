@@ -380,7 +380,12 @@ func TestTarget_Write(t1 *testing.T) {
 		want    int
 		wantErr bool
 	}{
-		// TODO: Add test cases.
+		{
+			name:   "writes each header once",
+			fields: fields{Hostname: "example.test", Port: 8080, Headers: []Header{{Key: "X-Test", Value: "one"}}},
+			wantB:  "http://example.test:8080 {X-Test:one}",
+			want:   len("http://example.test:8080 {X-Test:one}"),
+		},
 	}
 	for _, tt := range tests {
 		t1.Run(tt.name, func(t1 *testing.T) {

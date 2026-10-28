@@ -282,8 +282,6 @@ func (t *Target) Write(b io.Writer) (int, error) {
 		for _, v := range t.Headers {
 			n, err = v.Write(b)
 			count += n
-			n, err = v.Write(b)
-			count += n
 		}
 		n, err = b.Write([]byte("}"))
 		count += n

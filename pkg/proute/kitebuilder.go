@@ -3,6 +3,7 @@ package proute
 import (
 	"fmt"
 	"regexp"
+	"sort"
 	"strconv"
 	"strings"
 	"time"
@@ -97,7 +98,14 @@ func objectCrumbFromSchema(name string, v kitebuilder.Typer) (Crumb, error) {
 			ret.Elements = append(ret.Elements, c)
 		}
 
-		for k, vv := range v.GetProperties() {
+		properties := v.GetProperties()
+		propertyNames := make([]string, 0, len(properties))
+		for k := range properties {
+			propertyNames = append(propertyNames, k)
+		}
+		sort.Strings(propertyNames)
+		for _, k := range propertyNames {
+			vv := properties[k]
 			c, err := objectCrumbFromSchema(k, &vv)
 			if err != nil {
 				return ret, &errors.ParserError{
